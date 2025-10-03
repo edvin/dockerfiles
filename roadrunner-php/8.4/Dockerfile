@@ -1,7 +1,7 @@
 FROM php:8.4-cli
 WORKDIR /app
 
-COPY --from=spiralscout/roadrunner:2025.1.2 /usr/bin/rr /app/rr
+COPY --from=spiralscout/roadrunner:2025.1.2 /usr/bin/rr /usr/local/bin/rr
 
 RUN apt-get update && apt-get install -y \
   zlib1g-dev libonig-dev \
