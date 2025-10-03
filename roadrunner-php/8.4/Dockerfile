@@ -1,7 +1,7 @@
 FROM php:8.4-cli
 WORKDIR /app
 
-ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN install-php-extensions sockets mbstring pdo_mysql redis grpc protobuf \
   && echo "memory_limit=-1" > /usr/local/etc/php/conf.d/memory-limit.ini
