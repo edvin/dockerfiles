@@ -8,4 +8,4 @@ RUN install-php-extensions sockets mbstring pdo_mysql redis grpc protobuf \
 
 COPY --from=spiralscout/roadrunner:2025.1.2 /usr/bin/rr /usr/local/bin/rr
 
-CMD ["rr", "serve"]
+ENTRYPOINT ["rr", "serve"]
