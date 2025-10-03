@@ -1,4 +1,4 @@
-FROM php:8.4-cli
+FROM php:8.3-cli
 WORKDIR /app
 
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
