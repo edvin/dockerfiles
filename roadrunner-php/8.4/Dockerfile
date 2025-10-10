@@ -11,4 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=spiralscout/roadrunner:2025.1.3 /usr/bin/rr /usr/local/bin/rr
 
+ENV WWWUSER=1000 \
+    WWWGROUP=1000
+
 ENTRYPOINT ["rr", "serve"]
