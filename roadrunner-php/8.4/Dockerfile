@@ -4,8 +4,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
   zlib1g-dev libonig-dev \
   && docker-php-ext-install sockets mbstring pdo_mysql \
-  && pecl install grpc protobuf redis \
-  && docker-php-ext-enable grpc protobuf redis \
+  && pecl install grpc protobuf redis brotli \
+  && docker-php-ext-enable grpc protobuf redis brotli \
   && rm -rf /var/lib/apt/lists/* \
   && echo "memory_limit=-1" > /usr/local/etc/php/conf.d/memory-limit.ini
 
