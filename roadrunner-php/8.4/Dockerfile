@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/* \
   && echo "memory_limit=-1" > /usr/local/etc/php/conf.d/memory-limit.ini
 
-COPY --from=spiralscout/roadrunner:2025.1.3 /usr/bin/rr /usr/local/bin/rr
+COPY --from=spiralscout/roadrunner:2025.1.4 /usr/bin/rr /usr/local/bin/rr
 
 ENV WWWUSER=1000 \
     WWWGROUP=1000
